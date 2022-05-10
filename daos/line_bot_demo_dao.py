@@ -2,11 +2,11 @@
 建立一個 DAO 用來讀取 JSON 資料
 """
 
+from __future__ import annotations
 import json
 import os 
 
 from models.line_bot_demo import LineBotDemo
-from __future__ import annotations
 from typing import List
 
 
