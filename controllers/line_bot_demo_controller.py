@@ -19,8 +19,8 @@ class LineBotDemoController:
     def find_robot_label(cls, data: Request):
         """Q1, Q2, Q3, Q4 represents the answer of the four questions (either 1 or 0)"""
         try:
-        #                  0       1      2       3       4       5      6       7  
-            LabelList = ["愛情", "推理", "美食", "挑戰", "旅遊", "驚悚", "科技", "運動"]
+        #                  0       1      2       3       4       5      6       7       8      9      10      11     12      13      14      15
+            LabelList = ["學習", "推理", "愛情", "娛樂", "動物", "驚悚", "日常", "推理", "愛情", "挑戰", "心情", "挑戰", "奇幻", "美食", "美食", "旅遊"]
             result = ''
             answere_dict = data.get_json()
             answeres_list = answere_dict["answeres"]
@@ -28,6 +28,6 @@ class LineBotDemoController:
                 result += ('1' if q is True else '0') 
 
             # transfer binary index to hex index and get the Label
-            return LabelList[ int(result, 2)%9 ]
+            return LabelList[ int(result, 2) ]
         except:
             return Response(response="""{"message": "system error"}""", status=404)
