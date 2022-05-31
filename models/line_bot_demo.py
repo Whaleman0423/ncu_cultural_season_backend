@@ -22,8 +22,11 @@ class LineBotDemo(object):
                 ex. @100qffhp
         line_bot_pic_url (str):
             Line 官方帳號大頭貼的 url
+        youtube_link (str):
+            youtube 影片連結
+        
     '''
-    def __init__(self, line_bot_name, line_bot_description=" ", line_bot_author=[' '], line_bot_author_department_grade=[' '], line_bot_tag=[' '], line_bot_entrance_basic_ID=" ", line_bot_pic_url=" "):
+    def __init__(self, line_bot_name, line_bot_description=" ", line_bot_author=[' '], line_bot_author_department_grade=[' '], line_bot_tag=[' '], line_bot_entrance_basic_ID=" ", line_bot_pic_url=" ", youtube_link=" "):
         '''建構子'''
         self.line_bot_name = line_bot_name
         self.line_bot_description = line_bot_description
@@ -32,7 +35,7 @@ class LineBotDemo(object):
         self.line_bot_tag = line_bot_tag
         self.line_bot_entrance_basic_ID = line_bot_entrance_basic_ID
         self.line_bot_pic_url = line_bot_pic_url
-		
+        self.youtube_link = youtube_link
 
     @staticmethod
     def from_dict(linebotdemo_dict: dict) -> LineBotDemo:
@@ -52,6 +55,7 @@ class LineBotDemo(object):
 			line_bot_tag=linebotdemo_dict.get('line_bot_tag', [' ']),
 			line_bot_entrance_basic_ID=linebotdemo_dict.get('line_bot_entrance_basic_ID', " "),
 			line_bot_pic_url=linebotdemo_dict.get('line_bot_pic_url', " "),
+            youtube_link = linebotdemo_dict.get('youtube_link', " ")
 			
         )
         return linebotdemo
@@ -69,7 +73,8 @@ class LineBotDemo(object):
 			'line_bot_author_department_grade': self.line_bot_author_department_grade,
 			'line_bot_tag': self.line_bot_tag,
 			'line_bot_entrance_basic_ID': self.line_bot_entrance_basic_ID,
-			'line_bot_pic_url': self.line_bot_pic_url
+			'line_bot_pic_url': self.line_bot_pic_url,
+            'youtube_link': self.youtube_link
 		}
         return linebotdemo_dict
 
@@ -82,6 +87,7 @@ class LineBotDemo(object):
 			line_bot_author_department_grade={self.line_bot_author_department_grade},
 			line_bot_tag={self.line_bot_tag},
 			line_bot_entrance_basic_ID={self.line_bot_entrance_basic_ID},
-			line_bot_pic_url={self.line_bot_pic_url}
+			line_bot_pic_url={self.line_bot_pic_url},
+            youtube_link={self.youtube_link}
         )''')
     
